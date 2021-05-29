@@ -1,0 +1,6 @@
+.poke_box{
+    height: 300px;
+    width: 250px;
+    box-shadow: 3px 3px 15px -1px;
+    border-radius: 1rem;
+}
