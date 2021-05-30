@@ -1,6 +1,47 @@
+body{
+    font-family: sans-serif;
+}
+.input_nombre{
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 20px;
+    outline: none;
+    border-radius: 1rem;
+}
+
+.btn_buscar{
+font-size: 25px;
+border-radius: 1rem;
+}
+
+.upper_title_container{
+    text-align: center;
+    background-color: rgb(204, 255, 255);
+    box-shadow: 3px 3px 15px -1px;
+    border-radius: 1rem;
+    margin: 2rem;
+    padding: 0.5rem;
+}
+
 .poke_box{
+
     height: 300px;
     width: 250px;
     box-shadow: 3px 3px 15px -1px;
     border-radius: 1rem;
+    margin: 2rem;
+
+}
+
+.poke_name{
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.poke_img{
+    display: block;
+    height: auto;
+    width:75%;
+    margin-left: auto;
+    margin-right: auto;
 }
