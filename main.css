@@ -22,6 +22,10 @@ border-radius: 1rem;
     margin: 2rem;
     padding: 0.5rem;
 }
+.poke_container{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .poke_box{
 
