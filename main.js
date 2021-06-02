@@ -2,7 +2,8 @@ const pokecontainer = document.querySelector('.poke_container');
 const selectGen = document.querySelector('#select_gen');
 const btn_gen = document.querySelector('.btn_generar');
 const btn_buscar = document.querySelector('.btn_buscar');
-const pokeBox = document.getElementsByClassName(".poke_box");
+const searchBar = document.querySelector('.input_nombre')
+let pokeBox ;
 
 function getPokemons(count,limit){
     
@@ -27,6 +28,15 @@ function getPokemons(count,limit){
     
     }
 
+    if(count===limit){
+    pokeBox = document.getElementsByClassName("poke_box");
+    pokeBox = Array.from(pokeBox);
+    console.log(pokeBox)
+    searchBar.removeAttribute('disabled')
+
+
+    }
+
     })
 
 }
@@ -36,6 +46,7 @@ function FirstLetterUpperCase(str){
 }
 
 btn_gen.addEventListener('click', ()=>{
+    searchBar.setAttribute('disabled','true')
     pokecontainer.innerHTML= '';
 
     values = selectGen.value.split(",");
@@ -46,9 +57,32 @@ btn_gen.addEventListener('click', ()=>{
     
 })
 
-btn_buscar.addEventListener('click', ()=>{
+searchBar.addEventListener('keyup', ()=>{
+ 
+function filterOfNames(el){
+    const pokeName = searchBar.value.toLowerCase();
+    const actualElement = el.firstElementChild.innerText.toLowerCase()
+    
+    return  actualElement.includes(pokeName)
+}
 
-const pokeBox = document.getElementsByClassName("poke_box");
+const filteredSearch = pokeBox.filter(n => filterOfNames(n))
+
+if(searchBar.value.length>0){
+    pokecontainer.innerHTML = ''
+    filteredSearch.forEach(el => {
+        pokecontainer.append(el)
+    });
+}else{
+    pokecontainer.innerHTML = '';
+    pokeBox.forEach(el => {
+        pokecontainer.append(el)
+    });
+    
+}
+
+
+console.log(filteredSearch)
 
 
 })
