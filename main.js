@@ -68,21 +68,9 @@ function filterOfNames(el){
 
 const filteredSearch = pokeBox.filter(n => filterOfNames(n))
 
-if(searchBar.value.length>0){
-    pokecontainer.innerHTML = ''
-    filteredSearch.forEach(el => {
-        pokecontainer.append(el)
-    });
-}else{
-    pokecontainer.innerHTML = '';
-    pokeBox.forEach(el => {
-        pokecontainer.append(el)
-    });
-    
-}
-
-
-console.log(filteredSearch)
-
+pokecontainer.innerHTML = ''
+filteredSearch.forEach(el => {
+    pokecontainer.append(el)
+});
 
 })
